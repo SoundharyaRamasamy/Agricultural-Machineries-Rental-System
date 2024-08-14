@@ -1,0 +1,48 @@
+<div class="container wrapper wrapper2">
+    <div class="row">
+        <!-- Form -->
+        <div class="col-md-12">
+            <h3>Add FertilizerShop</h3>
+            <button type="button" class="btn btn-danger btn-sm" position="Right" [routerLink]="['/Admin-Fertilizergetall-list']" >Back to fertilizers list</button>
+            <form [formGroup]="issueForm" (ngSubmit)="submitForm()" novalidate>
+                <div class="form-group">
+                    <label>Area</label>
+                    <input type="text" formControlName="areas" class="form-control" maxlength="50">
+                    <div *ngIf="issueForm.get('areas').touched && issueForm.get('areas').invalid" class="alert alert-danger">
+                        <div *ngIf="issueForm.get('areas').errors?.required">*Please enter AreaName</div>
+                      </div>
+                </div>
+                <div class="form-group">
+                    <label>Shopname</label>
+                    <input type="text" formControlName="shopname" class="form-control" maxlength="50">
+                    <div *ngIf="issueForm.get('shopname').touched && issueForm.get('shopname').invalid" class="alert alert-danger">
+                        <div *ngIf="issueForm.get('shopname').errors?.required">*Please enter ShopName</div>
+                      </div>
+                </div>
+                <div class="form-group">
+                    <label>Date</label>
+                    <input type="date" formControlName="date" class="form-control" maxlength="50">
+                    <div *ngIf="issueForm.get('date').touched && issueForm.get('date').invalid" class="alert alert-danger">
+                        <div *ngIf="issueForm.get('date').errors?.required">*Please enter Date</div>
+                      </div>
+                </div>
+                <div class="form-group">
+                    <label>AvailableProducts</label>
+                    <textarea class="form-control" formControlName="availableproducts" rows="10" maxlength="10000"></textarea>
+                    <div *ngIf="issueForm.get('availableproducts').touched && issueForm.get('availableproducts').invalid" class="alert alert-danger">
+                        <div *ngIf="issueForm.get('availableproducts').errors?.required">*Please enter AvailableProducts</div>
+                      </div>
+                </div>
+                <div class="form-group">
+                    <label>Contact</label>
+                    <input type="text" formControlName="contact" class="form-control" maxlength="10">
+                    <div *ngIf="issueForm.get('contact').touched && issueForm.get('contact').invalid" class="alert alert-danger">
+                        <div *ngIf="issueForm.get('contact').errors?.required"></div>*Please enter 10 digit ContactNumber
+                        
+                      </div>
+                </div>
+                <button (click)="onSubmit()" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

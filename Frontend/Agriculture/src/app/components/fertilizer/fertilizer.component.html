@@ -1,0 +1,35 @@
+<div class="container wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="inner">
+                <h3>Fertilizer</h3>
+                <button type="button" class="btn btn-danger btn-sm" [routerLink]="['/Admin-Fertilizergetall-list']" >Back to Fertilizerlist</button>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Area</th>
+                            <th scope="col">Shopname</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Availableproducts</th>
+                            <th scope="col">Contact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngIf="FertilizerDetail">
+                            <th scope="row">{{FertilizerDetail.areas}}</th>
+                            <td>{{FertilizerDetail.shopname}}</td>
+                            <td>{{FertilizerDetail.date}}</td>
+                            <td>{{FertilizerDetail.availableproducts}}</td>
+                            <td>{{FertilizerDetail.contact}}</td>
+                            <td> &nbsp;&nbsp;&nbsp;
+                               <button type="button" class="btn btn-success btn-sm move-right" [routerLink]="['/Admin-Fertilizerupdate-list/', FertilizerDetail.shopid]">Edit</button>
+                                <br><button type="button" class="btn btn-danger btn-sm" (click)="deletefertilizer()">Remove</button>
+                            </td>
+                            
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

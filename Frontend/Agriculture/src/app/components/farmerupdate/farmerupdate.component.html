@@ -1,0 +1,49 @@
+<div class="container wrapper wrapper2">
+    <div class="row">
+        <!-- Form -->
+        <div class="col-md-12">
+            <h3>Edit Farmer</h3>
+            <form [formGroup]="UpdateFarmerForm" (ngSubmit)="submitForm()" novalidate>
+                <div class="form-group">
+                    <label>Farmername</label>
+                    <input type="text" formControlName="farmername" class="form-control" maxlength="20">
+                </div>
+                <div class="form-group">
+                    <label>Mobilenumber</label>
+                    <input type="text" formControlName="mobileno" class="form-control" maxlength="10">
+                </div>
+                <div class="form-group">
+                    <label>District</label>
+                    <input type="text" formControlName="district" class="form-control" maxlength="50">
+                </div>
+                <div class="form-group">
+                    <label>Area</label>
+                    <input type="text" formControlName="area" class="form-control" maxlength="10000">
+                </div>
+                <div class="form-group">
+                    <label>Village</label>
+                    <input type="text" formControlName="village" class="form-control" maxlength="50">
+                </div>
+                <div class="form-group">
+                    <label>Requied date</label>
+                    <input type="text" formControlName="requireddate" class="form-control" maxlength="10">
+                </div>
+                <div class="form-group">
+                    <label>Enter machine id</label>
+                    <input type="text" formControlName="machineid" class="form-control" maxlength="10">
+                    <button type="button" class="btn btn-danger btn-sm" (click)="SearchMachinery()">Search for machine</button>
+                </div>
+                <div class="form-group">
+                    <label>Rent</label>
+                    <input type="text" formControlName="rent" class="form-control" maxlength="10" [(ngModel)] ="MachineryDetail.rent">
+                </div>
+                <div class="form-group">
+                    <label>Hours</label>
+                    <input type="text" formControlName="hours" class="form-control" maxlength="10">
+                </div>
+                <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+

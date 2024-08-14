@@ -1,0 +1,12 @@
+.flex-container {
+   display: -webkit-flex;
+   display: flex;
+   background-color:darkseagreen;
+}
+.flex-item {
+   font-size: 18px;
+   font-style: oblique;
+   text-align: center;
+   background-color: darkgray;
+   margin: 5px;
+}

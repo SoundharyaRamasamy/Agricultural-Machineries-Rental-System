@@ -1,0 +1,40 @@
+<div class="container wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="inner">
+                <h3>Farmer</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Farmername</th>
+                            <th scope="col">Mobilenumber</th>
+                            <th scope="col">District</th>
+                            <th scope="col">Area</th>
+                            <th scope="col">Village</th>
+                            <th scope="col">Requireddate</th>
+                            <th scope="col">Machine id</th>
+                            <th scope="col">Rent</th>
+                            <th scope="col">Hours</th>
+                            <th scope="col">Totalrent</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngIf="FarmergetbyidDetail">
+                            <th scope="row">{{FarmergetbyidDetail.farmername}}</th>
+                            <td>{{FarmergetbyidDetail.mobileno}}</td>
+                            <td>{{FarmergetbyidDetail.district}}</td>
+                            <td>{{FarmergetbyidDetail.area}}</td>
+                            <td>{{FarmergetbyidDetail.village}}</td>
+                            <td>{{FarmergetbyidDetail.requireddate}}</td>
+                            <td>{{FarmergetbyidDetail.machineid}}</td>
+                            <td>{{FarmergetbyidDetail.rent}}</td>
+                            <td>{{FarmergetbyidDetail.hours}}</td>
+                            <td>{{FarmergetbyidDetail.totalrent}}</td>
+                           
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

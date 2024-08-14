@@ -1,0 +1,12 @@
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    background-color:darkgray;
+ }
+ .flex-item {
+    font-size: 20px;
+    font-style: inherit;
+    text-align: center;
+    background-color: darkgray;
+    margin: 30px;
+ }

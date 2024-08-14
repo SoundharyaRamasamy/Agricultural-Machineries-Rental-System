@@ -1,0 +1,42 @@
+<div class="container wrapper wrapper2">
+    <div class="row">
+        <!-- Form -->
+        <div class="col-md-12">
+            <h3>EDIT FERTILIZER LIST</h3>
+            <button type="button" class="btn btn-danger btn-sm" position="Right" [routerLink]="['/Admin-Fertilizergetall-list']" >Back to fertilizers list</button>
+            <form [formGroup]="UpdateFertilizerForm" (ngSubmit)="submitForm()" novalidate>
+                
+                <div class="form-group">
+                    <label>Shop Id</label>
+                    <input type="text" formControlName="shopid" class="form-control" maxlength="20">
+                </div>
+                <button type="button" class="btn btn-primary" (click)="searchFertilizer()">Search</button>
+
+                <div class="form-group">
+                    <label>Area</label>
+                    <input type="text" formControlName="areas" class="form-control" maxlength="20" [(ngModel)] ="FertilizerDetail.areas">
+                </div>
+                <div class="form-group">
+                    <label>Shop name</label>
+                    <input type="text" formControlName="shopname" class="form-control" maxlength="50" [(ngModel)] ="FertilizerDetail.shopname">
+                </div>
+                <div class="form-group">
+                    <label>Date</label>
+                    <input type="date" formControlName="date" class="form-control" maxlength="20" [(ngModel)] ="FertilizerDetail.date">
+                </div>
+                <div class="form-group">
+                    <label>AvailableProducts</label>
+                    <textarea class="form-control" formControlName="availableproducts" rows="10" maxlength="10000" [(ngModel)] ="FertilizerDetail.availableproducts"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Contact</label>
+                    <input type="text" formControlName="contact" class="form-control" maxlength="10" [(ngModel)] ="FertilizerDetail.contact">
+                </div>
+
+                <button  type="submit" class="btn btn-primary">Update</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-danger btn-sm" (click)='BACK()'>GO BACK</button>
+            </form>
+        </div>
+    </div>
+</div>

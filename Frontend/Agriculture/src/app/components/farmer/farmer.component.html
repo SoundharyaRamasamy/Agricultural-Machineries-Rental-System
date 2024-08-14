@@ -1,0 +1,40 @@
+<div class="container wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="inner">
+                <h3>Farmer</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Farmername</th>
+                            <th scope="col">Mobilenumber</th>
+                            <th scope="col">District</th>
+                            <th scope="col">Area</th>
+                            <th scope="col">Village</th>
+                            <th scope="col">Requireddate</th>
+                            <th scope="col">Machine id</th>
+                            <th scope="col">Rent</th>
+                            <th scope="col">Hours</th>
+                            <th scope="col">Totalrent</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngIf="FarmerDetail">
+                            <th scope="row">{{FarmerDetail.farmername}}</th>
+                            <td>{{FarmerDetail.mobileno}}</td>
+                            <td>{{FarmerDetail.district}}</td>
+                            <td>{{FarmerDetail.area}}</td>
+                            <td>{{FarmerDetail.village}}</td>
+                            <td>{{FarmerDetail.requireddate}}</td>
+                            <td>{{FarmerDetail.machineid}}</td>
+                            <td>{{FarmerDetail.rent}}</td>
+                            <td>{{FarmerDetail.hours}}</td>
+                            <td>{{FarmerDetail.totalrent}}</td>
+                            <td><button type="button" class="btn btn-success btn-sm move-right" [routerLink]="['/Admin-Farmerupdate-list/', FarmerDetail.farmerid]">Edit</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

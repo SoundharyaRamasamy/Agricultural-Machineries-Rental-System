@@ -1,0 +1,32 @@
+<div class="container wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="inner">
+                <h3>Machinery</h3>
+                <button type="button" class="btn btn-danger btn-sm" position="Right" [routerLink]="['/Admin-Machinerygetall-list']" >Back to machineries list</button>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Holder</th>
+                            <th scope="col">Machine</th>
+                            <th scope="col">Rent</th>
+                            <th scope="col">Phonenumber</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngIf="MachineryDetail">
+                            <th scope="row">{{MachineryDetail.holder}}</th>
+                            <td>{{MachineryDetail.machine}}</td>
+                            <td>{{MachineryDetail.rent}}</td>
+                            <td>{{MachineryDetail.phoneno}}</td>
+                            <td>
+                                <button type="button" class="btn btn-success btn-sm move-right" [routerLink]="['/Admin-Machineryupdate-list/', MachineryDetail.machineid]">Edit</button>
+                                <button type="button" class="btn btn-danger btn-sm" (click)="deletemachinery()">Remove</button>
+                             </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

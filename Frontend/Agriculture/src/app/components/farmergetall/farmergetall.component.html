@@ -1,0 +1,59 @@
+<div class="container wrapper">
+    <div class="row">
+        <!-- Issue table -->
+        <div class="col-md-12">
+            <div class="inner" [formGroup]="farmerFilterFG">
+                <h3>Farmer List</h3>
+                <button type="button" class="btn btn-danger btn-sm" position="Right" [routerLink]="['/Dashboard']" >Back to Login</button>
+                <br>
+                <div class="filter-row">
+                    <br>
+                    <div class="movie-filter">
+                        Date:
+                        <input type="date" name="" placeholder="" formControlName="requireddate">
+                    </div>
+                    <div class="sub-name">
+                        District:
+                        <input name="" placeholder="" formControlName="district">
+                    </div><br>
+                    <div class="filter-action">
+                        <input type="button" class="btn btn-primary" name="" placeholder="" value="Generate report" (click)="onFilter()">
+                    </div>
+                </div>
+                <br>
+            <div class="inner">
+              <H3>FARMER LIST</H3>
+                <table *ngIf="FarmerList?.length" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Farmername</th>
+                            <th scope="col">Mobilenumber</th>
+                            <th scope="col">District</th>
+                            <th scope="col">Area</th>
+                            <th scope="col">Village</th>
+                            <th scope="col">Requireddate</th>
+                            <th scope="col">Machine id</th>
+                            <th scope="col">Rent</th>
+                            <th scope="col">Hours</th>
+                            <th scope="col">Totalrent</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let farmer of FarmerList">
+                            <th scope="row">{{farmer.farmername}}</th>
+                            <td>{{farmer.mobileno}}</td>
+                            <td>{{farmer.district}}</td>
+                            <td>{{farmer.area}}</td>
+                            <td>{{farmer.village}}</td>
+                            <td>{{farmer.requireddate}}</td>
+                            <td>{{farmer.machineid}}</td>
+                            <td>{{farmer.rent}}</td>
+                            <td>{{farmer.hours}}</td>
+                            <td>{{farmer.totalrent}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

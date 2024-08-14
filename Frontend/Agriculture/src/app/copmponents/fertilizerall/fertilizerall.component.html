@@ -1,0 +1,49 @@
+<div class="container wrapper">
+    <div class="row">
+        <!-- Issue table -->
+        <div class="col-md-12">
+        <div class="inner">
+            <div class="inner" [formGroup]="fertilizerFilterFG">
+                <h3>Fertilizers</h3>
+                <div class="filter-row">
+                    <div class="movie-filter">
+                        Date:
+                        <input type="date" name="" placeholder="" formControlName="date">
+                    </div><br>
+                    <div class="sub-name">
+                        Search by product:
+                        <input name="" placeholder="" formControlName="availableproducts">
+                    </div>
+                    
+                    <div class="filter-action">
+                       <input type="button" class="btn btn-primary" name="" placeholder="" value="Show" (click)="onFilter()">
+                    </div>
+                </div>
+            </div>
+        </div>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Area</th>
+                            <th scope="col">Shopname</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Availableproducts</th>
+                            <th scope="col">Contact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let fertilizer of FertilizerList">
+                            <th scope="row">{{fertilizer.areas}}</th>
+                            <td>{{fertilizer.shopname}}</td>
+                            <td>{{fertilizer.date}}</td>
+                            <td>{{fertilizer.availableproducts}}</td>
+                            <td>{{fertilizer.contact}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        
+    </div>
+</div>
+
+

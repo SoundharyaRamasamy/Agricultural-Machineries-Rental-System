@@ -1,0 +1,38 @@
+<div class="container wrapper wrapper2">
+    <div class="row">
+        <!-- Form -->
+        <div class="col-md-12">
+            <h3>Edit Machinery</h3>
+            <button type="button" class="btn btn-danger btn-sm" position="Right" [routerLink]="['/Admin-Machinerygetall-list']" >Back to machineries list</button>
+            <form [formGroup]="UpdateMachineryForm" (ngSubmit)="submitForm()" novalidate>
+
+                <div class="form-group">
+                    <label>Machine Id</label>
+                    <input type="text" formControlName="machineid" class="form-control" maxlength="20" [(ngModel)] ="MachineryDetail.machineid">
+                </div>
+                <button type="button" class="btn btn-primary" (click)="searchMachinery()">Search</button>
+
+                <div class="form-group">
+                    <label>Holder</label>
+                    <input type="text" formControlName="holder" class="form-control" maxlength="20" [(ngModel)] ="MachineryDetail.holder">
+                </div>
+                <div class="form-group">
+                    <label>Machine</label>
+                    <input type="text" formControlName="machine" class="form-control" maxlength="50" [(ngModel)] ="MachineryDetail.machine">
+                </div>
+                <div class="form-group">
+                    <label>Rent</label>
+                    <input type="text" formControlName="rent" class="form-control" maxlength="20" [(ngModel)] ="MachineryDetail.rent">
+                </div>
+                <div class="form-group">
+                    <label>Phonenumber</label>
+                    <input type="text" formControlName="phoneno" class="form-control" maxlength="10" [(ngModel)] ="MachineryDetail.phoneno">
+                </div>
+                <button type="submit" class="btn btn-primary">Update</button>
+                <button class="btn btn-danger btn-sm" (click)='BACK()'>GO BACK</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+

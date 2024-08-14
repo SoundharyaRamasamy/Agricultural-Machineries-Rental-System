@@ -1,0 +1,48 @@
+<div class="container wrapper wrapper2">
+    <div class="row">
+        <!-- Form -->
+        <div class="col-md-12">
+            <h3>Add Machinery</h3>
+            <button type="button" class="btn btn-danger btn-sm" position="Right" [routerLink]="['/Admin-Machinerygetall-list']" >Back to machineries list</button>
+            <form [formGroup]="issueForm" (ngSubmit)="submitForm()" >
+                <div class="form-group">
+                    <label>Holder</label>
+                    <input type="text" formControlName="holder" class="form-control" maxlength="20">
+                    <div *ngIf="issueForm.get('holder').touched && issueForm.get('holder').invalid" class="alert alert-danger">
+                        <div *ngIf="issueForm.get('holder').errors?.required">*Please enter Name</div>
+                      </div>
+                </div>
+                <div class="form-group">
+                    <label>Machine</label>
+                    <input type="text" formControlName="machine" class="form-control" maxlength="50">
+                    <div *ngIf="issueForm.get('machine').touched && issueForm.get('machine').invalid" class="alert alert-danger">
+                        <div *ngIf="issueForm.get('machine').errors?.required">*Please enter Machine Name</div>
+                      </div>
+                </div>
+                <div class="form-group">
+                    <label>Rent</label>
+                    <input type="text" formControlName="rent" class="form-control" maxlength="20">
+                    <div *ngIf="issueForm.get('rent').touched && issueForm.get('rent').invalid" class="alert alert-danger">
+                        <div *ngIf="issueForm.get('rent').errors?.required">*Please enter Rent</div>
+                      </div>
+                </div>
+                <div class="form-group">
+                    <label>Phonenumber</label>
+                    <input type="text" formControlName="phoneno" class="form-control" maxlength="10">
+                </div>
+                
+               <div *ngIf="issueForm.get('phoneno').touched && issueForm.get('phoneno').invalid" class="alert alert-danger">
+                    <div *ngIf="issueForm.get('phoneno').errors?.required">*Please enter mobile number</div>
+                    <div *ngIf="issueForm.get('phoneno').errors?.pattern">*Mobile number is not 10 digit</div>
+                  </div>
+
+            
+
+                <br>
+                <button (click)="onSubmit()"  class="btn btn-primary">Submit</button>
+
+            </form>
+        </div>
+    </div>
+</div>
+

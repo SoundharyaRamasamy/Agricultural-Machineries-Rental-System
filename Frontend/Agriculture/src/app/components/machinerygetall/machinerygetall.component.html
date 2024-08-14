@@ -1,0 +1,49 @@
+<div class="container wrapper">
+    <div class="row">
+        <!-- Issue table -->
+        <div class="col-md-12">
+            <div class="inner" [formGroup]="machineryFilterFG">
+                <h3>Machineries</h3>
+                <button type="button" class="btn btn-danger btn-sm" position="Right" [routerLink]="['/Dashboard']" >Back to Login</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="button" class="btn btn-success btn-sm" [routerLink]="['/Admin-Machinery-create']" >Create</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <button type="button" class="btn btn-success btn-sm" [routerLink]="['/Admin-Machineryupdate-list/1']" >Edit</button>
+               <br>
+                <div class="filter-row">
+                    <div class="sub-name">
+                        <p>Machinename</p>
+                        <input type="" name="" placeholder="" formControlName="machine">
+                    </div>
+                    
+                    <div class="filter-action">
+                        <input type="button" class="btn btn-primary" name="" placeholder="" value="Generate report" (click)="onFilter()">
+                    </div>
+                </div>
+            </div>
+            <div class="inner">
+                <h3>MACHINERY LIST</h3>
+               
+                <br><table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Holdername</th>
+                            <th scope="col">Machinename</th>
+                            <th scope="col">Rent</th>
+                            <th scope="col">Phonenumber</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let machinery of MachineryList">
+                            <th scope="row">{{machinery.holder}}</th>
+                            <td>{{machinery.machine}}</td>
+                            <td>{{machinery.rent}}</td>
+                            <td>{{machinery.phoneno}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

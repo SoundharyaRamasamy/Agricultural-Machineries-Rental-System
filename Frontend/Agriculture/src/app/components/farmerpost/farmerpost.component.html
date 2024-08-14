@@ -1,0 +1,88 @@
+<div class="container wrapper wrapper2">
+    <div class="row">
+        <!-- Form -->
+        <div class="col-md-12">
+            <h3>Add Farmer</h3>
+            <form [formGroup]="issueForm" (ngSubmit)="submitForm()" novalidate>
+                <div class="form-group">
+                    <label>Farmername</label>
+                    <input type="text" formControlName="farmername" class="form-control" maxlength="20">
+                    <div *ngIf="issueForm.get('farmername').touched && issueForm.get('farmername').invalid" class="alert alert-danger">
+                        <div *ngIf="issueForm.get('farmername').errors?.required"></div>*Please enter Name
+                      </div>
+                </div>
+                <div class="form-group">
+                    <label>Mobilenumber</label>
+                    <input type="text" formControlName="mobileno" class="form-control" maxlength="10">
+                    <div *ngIf="issueForm.get('mobileno').touched && issueForm.get('mobileno').invalid" class="alert alert-danger">
+                        <div *ngIf="issueForm.get('mobileno').errors?.required"></div>*Please enter 10 digit 8mobile number
+                      </div>
+                </div>
+                <div class="form-group">
+                    <label>District</label>
+                    <input type="text" formControlName="district" class="form-control" maxlength="50">
+                    <div *ngIf="issueForm.get('district').touched && issueForm.get('district').invalid" class="alert alert-danger">
+                        <div *ngIf="issueForm.get('district').errors?.required"></div>*Please enter District
+                      </div>
+                </div>
+                <div class="form-group">
+                    <label>Area</label>
+                    <input type="text" formControlName="area" class="form-control" maxlength="10000">
+                    <div *ngIf="issueForm.get('area').touched && issueForm.get('area').invalid" class="alert alert-danger">
+                        <div *ngIf="issueForm.get('area').errors?.required"></div>*Please enter Area
+                      </div>
+                </div>
+                <div class="form-group">
+                    <label>Village</label>
+                    <input type="text" formControlName="village" class="form-control" maxlength="50">
+                    <div *ngIf="issueForm.get('village').touched && issueForm.get('village').invalid" class="alert alert-danger">
+                        <div *ngIf="issueForm.get('village').errors?.required"></div>*Please enter Village
+                      </div>
+                </div>
+                <div class="form-group">
+                    <label>Requied date</label>
+                    <input type="date" formControlName="requireddate" class="form-control" maxlength="10">
+                    <div *ngIf="issueForm.get('requireddate').touched && issueForm.get('requireddate').invalid" class="alert alert-danger">
+                        <div *ngIf="issueForm.get('requireddate').errors?.required"></div>*Please enter RequiredDate
+                      </div>
+                </div>
+                <div class="form-group">
+                    <label>Enter machine id</label>
+                    <input type="text" formControlName="machineid" class="form-control" maxlength="10">
+                    <div *ngIf="issueForm.get('machineid').touched && issueForm.get('machineid').invalid" class="alert alert-danger">
+                        <div *ngIf="issueForm.get('machineid').errors?.required"></div>*Please enter MachineId 
+                      </div>
+                    <button type="button" class="btn btn-danger btn-sm" (click)="SearchMachinery()">Search for machine</button>
+                </div>
+                <div class="form-group">
+                    <label>Rent</label>
+                    <input type="text" formControlName="rent" class="form-control" maxlength="10" [(ngModel)] ="MachineryDetail.rent">
+                    <div *ngIf="issueForm.get('rent').touched && issueForm.get('rent').invalid" class="alert alert-danger">
+                        <div *ngIf="issueForm.get('rent').errors?.required"></div>*Please Search For Rent
+                      </div>
+                </div>
+
+                
+
+                <div class="form-group">
+                    <label>Hours</label>
+                    <input type="text" formControlName="hours" class="form-control" maxlength="10">
+                    <div *ngIf="issueForm.get('hours').touched && issueForm.get('hours').invalid" class="alert alert-danger">
+                        <div *ngIf="issueForm.get('hours').errors?.required">*Please enter Hours required</div>
+                        
+                      </div>
+                </div>
+                
+              <!-- <div class="form-group">
+                    <label>Total rent</label>
+                    <input type="text" formControlName="totalrent" class="form-control" maxlength="10">
+                     <div *ngIf="issueForm.get('totalrent').touched && issueForm.get('totalrent').invalid" class="alert alert-danger">
+                        <div *ngIf="issueForm.get('totalrent').errors?.required"></div>
+                        
+                      </div>
+                </div>-->
+                <button (click)="onSubmit()" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
